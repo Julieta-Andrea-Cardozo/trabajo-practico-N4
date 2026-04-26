@@ -24,10 +24,10 @@ const agregarTarea = () => {
   });
 
   const btn = document.createElement("button");
-  btn.textContent = "";
+  btn.textContent = "🗑️";
   btn.className = "btn-eliminar";
   btn.addEventListener("click", (e) => {
-    e.stopPropagation(); // evitar que active el click del li
+    e.stopPropagation(); 
     li.remove();
     actualizarContador();
   });
