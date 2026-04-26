@@ -1,3 +1,24 @@
+const tipos = {
+  fire: "🔥 Fuego",
+  water: "💧 Agua",
+  grass: "🌿 Planta",
+  electric: "⚡ Eléctrico",
+  psychic: "🔮 Psíquico",
+  ice: "❄️ Hielo",
+  dragon: "🐉 Dragón",
+  dark: "🌑 Siniestro",
+  fairy: "🌸 Hada",
+  normal: "⭐ Normal",
+  fighting: "🥊 Lucha",
+  flying: "🦅 Volador",
+  poison: "☠️ Veneno",
+  ground: "🌍 Tierra",
+  rock: "🪨 Roca",
+  bug: "🐛 Bicho",
+  ghost: "👻 Fantasma",
+  steel: "⚙️ Acero",
+};
+
 const contenedor = document.getElementById("contenedor-api");
 const buscador = document.getElementById("buscador");
 const msgBuscador = document.getElementById("msgBuscador");
@@ -13,7 +34,7 @@ const cargarPokemons = async () => {
 
     const data = await response.json();
 
-    // Por cada pokemon hacemos una segunda consulta para obtener la imagen
+    
     const detallados = await Promise.all(
       data.results.map(p => fetch(p.url).then(r => r.json()))
     );
@@ -34,10 +55,10 @@ const renderPokemons = (lista) => {
 
   contenedor.innerHTML = lista.map(p => `
     <div class="card">
-      <img src="${p.sprites.front_default}" alt="${p.name}">
+      <img src="${p.sprites.other['official-artwork'].front_default}"
       <h3>${p.name}</h3>
       <p>ID: ${p.id}</p>
-      <p>Tipo: ${p.types.map(t => t.type.name).join(", ")}</p>
+     <p>Tipo: ${p.types.map(t => tipos[t.type.name] || t.type.name).join(" · ")}</p>
     </div>
   `).join("");
 };
@@ -59,6 +80,7 @@ buscador.addEventListener("input", () => {
     contenedor.innerHTML = `<p class="empty">No se encontraron resultados.</p>`;
   } else {
     renderPokemons(filtrados);
+    
   }
 });
 

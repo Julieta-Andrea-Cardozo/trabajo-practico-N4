@@ -5,7 +5,10 @@ const contador = document.getElementById("contador");
 
 const actualizarContador = () => {
   const pendientes = listaTareas.querySelectorAll("li:not(.completada)").length;
-  contador.textContent = pendientes;
+  const completadas = listaTareas.querySelectorAll("li.completada").length;
+  
+  document.getElementById("contador").textContent = pendientes;
+  document.getElementById("contadorCompletadas").textContent = completadas;
 };
 
 const agregarTarea = () => {

@@ -49,4 +49,4 @@ document.getElementById("precio").addEventListener("input", (e) => {
   renderProductos();
 });
 
-renderProductos(); // Mostrar todo al cargar
+renderProductos();

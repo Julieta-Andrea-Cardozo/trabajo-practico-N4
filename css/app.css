@@ -1,17 +1,17 @@
-/* Tarjetas */
 .card {
-  background: var(--bg-card, #da25b3);
+  background: linear-gradient(135deg, #1a1a2e, #2d1b69);
   border-radius: var(--radius);
   padding: 1rem 1.5rem;
   box-shadow: var(--shadow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(17, 17, 17, 0.3);
 }
 
-/* Grid responsive */
+
 #contenedor-productos, #contenedor-api {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -19,7 +19,7 @@
   margin-top: 1.5rem;
 }
 
-/* Filtros */
+
 .filtros {
   display: flex;
   flex-wrap: wrap;
@@ -58,18 +58,18 @@
 .form-todo input:focus { outline: 2px solid #d9ddd4; }
 .form-todo button {
   padding: 0.5rem 1.2rem; 
-  background: #0d0e0d;
-  color: rgb(167, 21, 21);
+  background: #e02894;
+  color: rgb(243, 240, 240);
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
 }
-.form-todo button:hover { background: #e2e5e6; }
+.form-todo button:hover { background: #eb50c4; }
 
 #listaTareas { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 #listaTareas li {
-  background: #cdcdd3;
+  background: #fd9df8;
   padding: 0.8rem 1rem;
   border-radius: 8px;
   display: flex;
@@ -77,6 +77,7 @@
   align-items: center;
   cursor: pointer;
   transition: opacity 0.2s;
+  color: black;
 }
 #listaTareas li.completada {
   text-decoration: line-through;
@@ -120,3 +121,98 @@
   margin-bottom: 0.5rem;
 }
 #buscador:focus { outline: 2px solid #2821b6; }
+/* Título Pokédex */
+#titulo-pokedex {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #FFDE00;
+  text-shadow: 3px 3px 0px #3B4CCA;
+  letter-spacing: 4px;
+}
+
+/* Nombre de cada pokémon */
+.card h3 {
+  color: #ff00ea;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+}
+#contenedor-api .card img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+#contenedor-api .card img {
+  width: 180px;
+  height: 180px;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0px 4px 12px rgba(255, 222, 0, 0.6));
+  animation: flotar 2s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.contadores {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.contador-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #6c63ff;
+  background: rgba(108, 99, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.contador-box:hover {
+  transform: scale(1.08);
+}
+
+.contador-icono {
+  font-size: 1.5rem;
+}
+
+.contador-box span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #6c63ff;
+  line-height: 1;
+}
+
+.contador-box p {
+  font-size: 0.7rem;
+  color: #6c63ff;
+  margin: 0;
+  text-align: center;
+}
+
+.contador-box.completadas {
+  border-color: #43e97b;
+  background: rgba(67, 233, 123, 0.1);
+}
+
+.contador-box.completadas span,
+.contador-box.completadas p {
+  color: #43e97b;
+}
+#contenedor-productos .card h3 {
+  font-size: 2rem;
+  color: #f7ecec;
+}
+
+#contenedor-productos .card p {
+  font-size: 1rem;
+  color: #94a3b8;
+}

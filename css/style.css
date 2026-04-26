@@ -49,3 +49,12 @@ nav a:hover {
   color: black;
   font-size: 24px;
 }
+#contenedor-api .card h3 {
+  font-size: 1.3rem;
+  color: #FFDE00;
+}
+
+#contenedor-api .card p {
+  font-size: 1,5rem;
+  color: #e9f0f8;
+}
