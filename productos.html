@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <h1>Filtro de Productos</h1>
+
+  <div class="filtros">
+    <select id="categoria">
+      <option value="">Todas las categorías</option>
+      <option value="ropa">Ropa</option>
+      <option value="electronica">Electrónica</option>
+      <option value="hogar">Hogar</option>
+      <option value="deportes">Deportes</option>
+    </select>
+
+    <label>Precio máx: $ <span id="valorPrecio">200000</span></label>
+    <input type="range" id="precio" min="0" max="200000" value="200000">
+    
+    <label>
+      <input type="checkbox" id="stock"> Solo en stock
+    </label>
+
+    <input type="text" id="busqueda" placeholder="Buscar producto...">
+  </div>
+
+  <div id="contenedor-productos"></div>
+
+  <script src="js/productos.js"></script>
+</body>
+</html>
