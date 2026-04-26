@@ -1,0 +1,122 @@
+/* Tarjetas */
+.card {
+  background: var(--bg-card, #da25b3);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(17, 17, 17, 0.3);
+}
+
+/* Grid responsive */
+#contenedor-productos, #contenedor-api {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color:rgb(17, 16, 16)
+}
+.filtros input, .filtros select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ffc6f1;
+  background: #ffc6f1;
+  color: rgb(15, 15, 15);
+  font-size: 1rem;
+}
+.filtros input:focus, .filtros select:focus {
+  outline: 2px solid#8f1a8f ;
+}
+
+
+.form-todo {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.form-todo input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #fac1f5;
+  background: #ebebee;
+  color: rgb(20, 18, 18);
+  font-size: 1rem;
+}
+.form-todo input:focus { outline: 2px solid #d9ddd4; }
+.form-todo button {
+  padding: 0.5rem 1.2rem; 
+  background: #0d0e0d;
+  color: rgb(167, 21, 21);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.form-todo button:hover { background: #e2e5e6; }
+
+#listaTareas { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+#listaTareas li {
+  background: #cdcdd3;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+#listaTareas li.completada {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.btn-eliminar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+
+.loading { color: #181a18; font-style: italic; animation: pulso 1s infinite alternate; }
+@keyframes pulso { from { opacity: 1; } to { opacity: 0.4; } }
+
+.error {
+  background: #2d0000;
+  border: 1px solid #ff4757;
+  color: #ff4757;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.empty {
+  color: #181b17;
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 2rem;
+}
+
+
+#buscador {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d60cdd;
+  background: #fcf8f8;
+  color: rgb(22, 21, 21);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+#buscador:focus { outline: 2px solid #2821b6; }
